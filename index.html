@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minimal Profile Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="profile-card">
+    
+    <!-- BAGIAN FOTO PROFIL -->
+    <div class="avatar-container">
+      <!-- Ubah "dudung.jpg" dengan nama file foto kamu jika berbeda -->
+      <img src="dudung.jpg" alt="Foto Profil Fildza" class="profile-img" onerror="this.src='dudu(ng)l.jpg'">
+    </div>
+
+    <!-- INFORMASI PROFIL -->
+    <h1 class="user-name">Fildza</h1>
+    <p class="user-tagline">Student & Web Programming Learner</p>
+    
+    <p class="user-bio">
+      Sedang mendalami pemrograman dasar, JavaScript, dan pengembangan web. Terus belajar dan membangun projek-projek kecil.
+    </p>
+
+    <!-- METADATA -->
+    <div class="meta-list">
+      <div class="meta-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Depok, Indonesia</span>
+      </div>
+      <div class="meta-item">
+        <i class="fa-solid fa-school"></i>
+        <span>SMK Taruna Bhakti</span>
+      </div>
+    </div>
+
+    <!-- TOMBOL AKSI -->
+    <div class="action-buttons">
+      <button class="btn btn-primary" id="followBtn">Follow</button>
+      <button class="btn btn-secondary">Message</button>
+    </div>
+
+    <!-- SOSIAL MEDIA -->
+    <div class="social-links">
+      <!-- Link GitHub -->
+      <a href="https://github.com/hyzash" target="_blank" rel="noopener noreferrer" class="social-icon" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      <!-- Link Instagram -->
+      <a href="https://www.instagram.com/fildzaath/" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <!-- Link Email -->
+      <a href="mailto:athsaalfahlifi@gmail.com" class="social-icon" title="Email"><i class="fa-regular fa-envelope"></i></a>
+    </div>
+
+  </div>
+
+  <script>
+    const followBtn = document.getElementById('followBtn');
+    let following = false;
+
+    followBtn.addEventListener('click', () => {
+      following = !following;
+      if (following) {
+        followBtn.textContent = 'Following';
+        followBtn.classList.add('is-following');
+      } else {
+        followBtn.textContent = 'Follow';
+        followBtn.classList.remove('is-following');
+      }
+    });
+  </script>
+</body>
+</html>
